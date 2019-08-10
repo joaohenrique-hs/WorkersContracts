@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Enumr.Entities;
 
 namespace Enumr
 {
@@ -7,7 +7,6 @@ namespace Enumr
 	{
 		static void Main(string[] args)
 		{
-			
 		}
 	}
 }
