@@ -18,6 +18,14 @@ namespace Enumr.Entities
 			BaseSalary = baseSalary;
 			Department = department;
 		}
+		public Worker(string name, string level, double baseSalary, string department)
+		{
+			Name = name;
+			Level = Enum.Parse<WorkerLevel>(level);
+
+			BaseSalary = baseSalary;
+			Department.NameDepartment = department;
+		}
 
 		public void addContract(HourContract contract)
 		{
