@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+
 
 namespace Enumr.Entities
 {
@@ -8,7 +10,7 @@ namespace Enumr.Entities
 		public string Name { get; set; }
 		public WorkerLevel Level { get; set; }
 		public double BaseSalary { get; set; }
-		public Department Department { get; private set; }
+		public Department Department { get; private set; } = new Department();
 		public List<HourContract> Contracts { get; private set; } = new List<HourContract>();
 
 		public Worker(string name, WorkerLevel level, double baseSalary, Department department)
@@ -16,17 +18,9 @@ namespace Enumr.Entities
 			Name = name;
 			Level = level;
 			BaseSalary = baseSalary;
+			Department = null;
 			Department = department;
 		}
-		public Worker(string name, string level, double baseSalary, string department)
-		{
-			Name = name;
-			Level = Enum.Parse<WorkerLevel>(level);
-
-			BaseSalary = baseSalary;
-			Department.NameDepartment = department;
-		}
-
 		public void addContract(HourContract contract)
 		{
 			Contracts.Add(contract);
